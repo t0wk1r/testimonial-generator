@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="bn">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Padma · Testimonial Studio</title>
+<style>
+    * {
+        box-sizing: border-box
+    }
+
+    body {
+        margin: 0;
+        background: #edf1ed;
+        color: #193c31;
+        font-family: Arial, sans-serif
+    }
+
+    header {
+        height: 85px;
+        background: #123f32;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 32px
+    }
+
+    header small {
+        display: block;
+        letter-spacing: 3px;
+        color: #bdd2c4;
+        font-size: 10px;
+        margin-bottom: 7px
+    }
+
+    h1 {
+        font-family: Georgia, serif;
+        font-size: 24px;
+        margin: 0
+    }
+
+    button {
+        cursor: pointer;
+        border: 1px solid #cbd5cc;
+        border-radius: 7px;
+        padding: 11px 16px;
+        background: white;
+        color: #244b3b;
+        font-weight: 600
+    }
+
+    button.primary {
+        background: #bfe5b4;
+        border-color: #bfe5b4;
+        color: #123f32
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 345px minmax(0, 1fr);
+        min-height: calc(100vh - 85px)
+    }
+
+    aside {
+        background: #fff;
+        padding: 25px;
+        border-right: 1px solid #d6ded6
+    }
+
+    h2 {
+        font-family: Georgia, serif;
+        font-size: 22px;
+        margin: 0 0 8px
+    }
+
+    p.hint {
+        font-size: 13px;
+        color: #728078;
+        line-height: 1.6;
+        margin: 0 0 23px
+    }
+
+    .section {
+        margin: 24px 0 12px;
+        font-size: 10px;
+        letter-spacing: 2px;
+        font-weight: bold;
+        color: #7b887c
+    }
+
+    .fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px
+    }
+
+    .wide {
+        grid-column: 1/-1
+    }
+
+    label {
+        font-size: 12px;
+        display: block;
+        color: #536658
+    }
+
+    input,
+    select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 6px;
+        border: 1px solid #d8e0d8;
+        border-radius: 5px;
+        background: #fbfcfa;
+        color: #183b2b;
+        font: 13px Arial
+    }
+
+    input:focus,
+    select:focus {
+        outline: 2px solid #a5cba5
+    }
+
+    input[type=file] {
+        font-size: 11px
+    }
+
+    .workspace {
+        padding: 30px;
+        overflow: hidden
+    }
+
+    .toolbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 23px;
+        font-size: 12px;
+        color: #687d6c
+    }
+
+    .status {
+        background: #e0eadc;
+        color: #3c6139;
+        border-radius: 30px;
+        padding: 7px 12px
+    }
+
+    .viewport {
+        overflow: auto;
+        padding: 10px 2px 25px
+    }
+
+    .paper {
+        width: 100%;
+        min-width: 710px;
+        aspect-ratio: 297/210;
+        background: #fffef5;
+        position: relative;
+        padding: 4.8%;
+        color: #25271d;
+        box-shadow: 0 12px 40px #223f3218;
+        font-family: Georgia, 'Times New Roman', serif
+    }
+
+    .paper:before {
+        content: '';
+        position: absolute;
+        inset: 15px;
+        border: 8px double #9c763a;
+        outline: 2px solid #b5965a;
+        outline-offset: 5px;
+        pointer-events: none
+    }
+
+    .inner {
+        height: 100%;
+        border: 1px solid #c4aa78;
+        padding: 18px 20px;
+        position: relative;
+        display: flex;
+        flex-direction: column
+    }
+
+    .school {
+        text-align: center
+    }
+
+    .school h3 {
+        color: #18733d;
+        font-family: Georgia, serif;
+        font-style: italic;
+        font-size: clamp(23px, 2.5vw, 39px);
+        margin: 0 0 8px;
+        font-weight: 900;
+        letter-spacing: 1px
+    }
+
+    .school p {
+        font-size: 12px;
+        margin: 0
+    }
+
+    .emblem {
+        width: 55px;
+        height: 55px;
+        border: 2px solid #a78b42;
+        border-radius: 50%;
+        margin: 13px auto 10px;
+        background: #f1e9c7;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #1d6c42;
+        font-size: 28px
+    }
+
+    .emblem img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain
+    }
+
+    .ribbon {
+        display: inline-block;
+        background: #272847;
+        color: #fff;
+        padding: 8px 30px;
+        font-size: 23px;
+        letter-spacing: 3px;
+        outline: 1px solid #bda66d;
+        outline-offset: 3px
+    }
+
+    .meta {
+        display: flex;
+        justify-content: space-between;
+        margin: 21px 0 16px;
+        font-size: 12px
+    }
+
+    .body {
+        font-size: clamp(12px, 1.18vw, 18px);
+        line-height: 1.95;
+        position: relative
+    }
+
+    .row {
+        display: flex;
+        gap: 7px
+    }
+
+    .fill {
+        border-bottom: 1px dotted #747463;
+        flex: 1;
+        text-align: center;
+        min-width: 0;
+        padding: 0 7px;
+        overflow-wrap: anywhere
+    }
+
+    .body p {
+        margin: 5px 0;
+        line-height: 1.9
+    }
+
+    .inline {
+        display: inline;
+        border-bottom: 1px dotted #747463;
+        padding: 0 12px
+    }
+
+    .signatures {
+        display: flex;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 35px;
+        font-size: 13px
+    }
+
+    .signatures span {
+        padding-top: 7px;
+        border-top: 1px solid #8f917d;
+        min-width: 100px;
+        text-align: center
+    }
+
+    .note {
+        font-size: 12px;
+        color: #7a887c;
+        text-align: center;
+        margin: 14px
+    }
+
+    .watermark {
+        position: absolute;
+        left: 30%;
+        top: 42%;
+        width: 40%;
+        height: 40%;
+        object-fit: contain;
+        opacity: .065;
+        pointer-events: none
+    }
+
+    .actions {
+        display: flex;
+        gap: 8px
+    }
+
+    footer {
+        font-size: 11px;
+        color: #7c897d;
+        margin-top: 25px;
+        line-height: 1.8
+    }
+
+    @page {
+    size: A4 landscape;
+    margin: 0;
+}
+
+@media print {
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box !important;
+    }
+
+    html,
+    body {
+        width: 297mm !important;
+        height: auto !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
+    }
+
+    header,
+    aside,
+    .toolbar,
+    .note {
+        display: none !important;
+    }
+
+    main,
+    .workspace,
+    .viewport {
+        display: block !important;
+        width: 297mm !important;
+        height: auto !important;
+        min-height: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+        overflow: visible !important;
+    }
+
+    .paper {
+        position: relative !important;
+        width: 297mm !important;
+        height: 209mm !important;
+        min-width: 0 !important;
+        min-height: 0 !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 15mm 18mm !important;
+        aspect-ratio: auto !important;
+        box-shadow: none !important;
+
+        break-inside: avoid !important;
+        page-break-inside: avoid !important;
+
+        print-color-adjust: exact !important;
+        -webkit-print-color-adjust: exact !important;
+    }
+
+    .inner {
+        position: relative !important;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 0 !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        border: 0 !important;
+    }
+
+    .school h3 {
+        font-size: 34px !important;
+    }
+
+    .school p {
+        font-size: 14px !important;
+    }
+
+    .emblem {
+        width: 60px !important;
+        height: 60px !important;
+        margin: 8px auto !important;
+    }
+
+    .ribbon {
+        font-size: 30px !important;
+    }
+
+    .meta {
+        top: 26% !important;
+        font-size: 19px !important;
+    }
+
+    .meta b {
+        font-size: 17px !important;
+    }
+
+    .body {
+        margin-top: 10mm !important;
+        font-size: 18px !important;
+        line-height: 1.5 !important;
+    }
+
+    .old {
+        font-size: 21px !important;
+    }
+
+    .body .row {
+        min-height: 8mm !important;
+    }
+
+    .body .row > .old:first-child {
+        min-width: 43mm !important;
+    }
+
+    .body p {
+        line-height: 1.45 !important;
+    }
+
+    .signatures {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: flex-end !important;
+        width: 100% !important;
+        margin-top: auto !important;
+        padding: 0 0 8mm !important;
+        gap: 15mm !important;
+        break-inside: avoid !important;
+    }
+
+    .signature-block {
+        width: 23% !important;
+    }
+
+    .signature-image {
+        display: flex !important;
+        align-items: center!important;
+        justify-content: center!important;
+        height: 12mm !important;
+        margin-bottom: 1mm !important;
+    }
+
+    .signature-image img {
+        max-width: 100% !important;
+        max-height: 100% !important;
+        object-fit: contain !important;
+    }
+
+    .signature-image img[hidden] {
+        display: none !important;
+    }
+
+    .signatures .signature-block span {
+        font-size: 21px !important;
+    }
+}
+
+    @media(max-width:1000px) {
+        main {
+            grid-template-columns: 300px minmax(0, 1fr)
+        }
+
+        .workspace {
+            padding: 20px
+        }
+    }
+
+    @media(max-width:720px) {
+        header {
+            padding: 18px;
+            height: auto;
+            gap: 15px
+        }
+
+        h1 {
+            font-size: 20px
+        }
+
+        main {
+            display: block
+        }
+
+        aside {
+            padding: 22px
+        }
+
+        .workspace {
+            padding: 15px
+        }
+
+        .fields {
+            gap: 12px
+        }
+
+        header .primary {
+            font-size: 11px;
+            padding: 10px
+        }
+
+        .paper {
+            width: 850px
+        }
+
+        .toolbar {
+            gap: 10px
+        }
+    }
+
+    .body {
+        font-size: clamp(11px, 1.02vw, 16px);
+        line-height: 1.6
+    }
+
+    .body p {
+        line-height: 1.65
+    }
+
+    .meta {
+        margin: 15px 0 12px
+    }
+
+    .signatures {
+        padding-top: 22px
+    }
+
+    .emblem {
+        margin: 8px auto
+    }
+
+    .ribbon {
+        font-size: 20px;
+        padding: 6px 26px
+    }
+
+    @media print {
+        .body {
+            font-size: 14px;
+            line-height: 1.65
+        }
+
+        .body p {
+            line-height: 1.65
+        }
+
+        .signatures {
+            padding-top: 12mm
+        }
+    }
+
+    @font-face {
+        font-family: Certificate;
+        src: url(certificate.ttf)
+    }
+
+    .paper {
+        aspect-ratio: 1.7;
+        background: radial-gradient(ellipse at 50% 10%, #f1eccb 0%, #fffef6 65%);
+        padding: 5.3% 6%;
+        container-type: inline-size
+    }
+
+    .paper:before {
+        display: none
+    }
+
+    .ornament {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none
+    }
+
+    .inner {
+        border: 0;
+        padding: 0;
+        height: 100%
+    }
+
+    .school h3 {
+        font-family: Arial, sans-serif;
+        font-size: 4.45cqw;
+        font-weight: 1000;
+        font-style: italic;
+        letter-spacing: .06em;
+        line-height: 1;
+        margin: 0;
+        color: #1a8f2c;
+        transform: scaleX(1.05);
+        text-shadow: 1px 0 #238a2e
+    }
+
+    .school p {
+        font: 700 1.5cqw 'Courier New', monospace;
+        margin: 4px 0 0
+    }
+
+    .emblem {
+        width: 5.7cqw;
+        height: 5.7cqw;
+        font-size: 3.4cqw;
+        margin: 5px auto 4px
+    }
+
+    .ribbon {
+        position: relative;
+        background: #292541;
+        outline: 0;
+        font: 3cqw Georgia, serif;
+        letter-spacing: 0;
+        padding: 3px 12px;
+        border: 2px solid #b8ae8c;
+        transform: rotate(-1deg);
+        isolation: isolate
+    }
+
+    .ribbon:before,
+    .ribbon:after {
+        content: '';
+        position: absolute;
+        top: 7%;
+        width: 35px;
+        height: 100%;
+        background: #292541;
+        z-index: -1;
+        clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 90%, 30% 48%)
+    }
+
+    .ribbon:before {
+        right: 100%
+    }
+
+    .ribbon:after {
+        left: 100%;
+        transform: rotate(180deg)
+    }
+
+    .meta {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 23%;
+        font-family: Certificate, Georgia, serif;
+        font-size: 1.9cqw;
+        margin: 0
+    }
+
+    .meta b {
+        font: 1.7cqw 'Times New Roman', serif;
+        border-bottom: 2px dotted #6e6655;
+        min-width: 120px;
+        display: inline-block;
+        text-align: center
+    }
+
+    .body {
+        margin-top: 2.8cqw;
+        font: 1.85cqw 'Times New Roman', serif;
+        line-height: 1.35
+    }
+
+    .old {
+        font-family: Certificate, Georgia, serif;
+        font-size: 2.1cqw;
+        letter-spacing: .015em
+    }
+
+    .body .row {
+        min-height: 2.55cqw;
+        align-items: baseline;
+        gap: 7px
+    }
+
+    .body .row>.old:first-child {
+        min-width: 16cqw
+    }
+
+    .fill {
+        line-height: 1.1;
+        border-bottom: 1.6px dotted #5b554a
+    }
+
+    .body p {
+        line-height: 1.25;
+        margin: 0
+    }
+
+    .inline {
+        padding: 0 9px;
+        border-bottom: 1.6px dotted #5b554a
+    }
+
+    .signatures {
+        font: 2.2cqw Certificate, Georgia, serif;
+        padding-top: 2cqw;
+        margin-top: auto;
+        align-items: end
+    }
+
+    .signatures span {
+        border: 0;
+        min-width: 0
+    }
+
+    .signatures span:last-child {
+        border-top: 1px dashed #5b554a;
+        min-width: 15cqw
+    }
+
+    .watermark {
+        top: 35%;
+        left: 34%;
+        width: 32%;
+        height: 43%;
+        opacity: .1
+    }
+
+    .body [data-v=school] {
+        text-transform: capitalize
+    }
+
+    @media print {
+        .paper {
+            width: 297mm;
+            height: 210mm;
+            padding: 15mm 18mm;
+            background: #fffef2
+        }
+
+        .school h3 {
+            font-size: 34px
+        }
+
+        .school p {
+            font-size: 14px
+        }
+
+        .emblem {
+            width: 60px;
+            height: 60px;
+            font-size: 32px;
+            margin: 8px auto
+        }
+
+        .ribbon {
+            font-size: 30px
+        }
+
+        .meta {
+            top: 26%;
+            font-size: 19px
+        }
+
+        .meta b {
+            font-size: 17px
+        }
+
+        .body {
+            margin-top: 10mm;
+            font-size: 18px;
+            line-height: 1.5
+        }
+
+        .old {
+            font-size: 21px
+        }
+
+        .body .row {
+            min-height: 8mm
+        }
+
+        .body p {
+            line-height: 1.45
+        }
+
+        .signatures {
+            font-size: 22px;
+            padding-top: 8mm
+        }
+
+        .body .row>.old:first-child {
+            min-width: 43mm
+        }
+    }
+
+    .inner {
+        height: calc(100% - 18px)
+    }
+
+    .signatures {
+        font-size: 2cqw
+    }
+
+    .body {
+        margin-top: 2.2cqw
+    }
+
+    .body [data-v=school] {
+        font-family: Certificate;
+        font-variant: normal
+    }
+
+    @media print {
+        .inner {
+            height: 100%
+        }
+
+        .signatures {
+            font-size: 22px
+        }
+    }
+
+    .signature-control {
+        border: 1px solid #d8e0d8;
+        border-radius: 6px;
+        padding: 12px;
+        margin: 10px 0
+    }
+
+    .signature-control input {
+        margin: 7px 0
+    }
+
+    .remove-signature {
+        font-size: 11px;
+        padding: 6px 9px
+    }
+
+    .remove-signature:disabled {
+        opacity: .45;
+        cursor: default
+    }
+
+    .paper {
+        aspect-ratio: 1.55
+    }
+
+    .signatures {
+        width: 100%;
+        margin-top: auto;
+        padding: 0 0 2.5cqw;
+        align-items: end;
+        gap: 20px
+    }
+
+    .signature-block {
+        width: 23%;
+        text-align: center;
+        flex: none
+    }
+
+    .signature-image {
+        height: 4cqw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 3px
+    }
+
+    .signature-image img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain
+    }
+
+    .signature-image img[hidden] {
+        display: none
+    }
+
+    .signatures .signature-block span {
+        display: block;
+        min-width: 0;
+        border-top: 1px dashed #81705c;
+        padding-top: 5px;
+        font-size: 2cqw
+    }
+
+    .signature-block:first-child {
+        text-align: left
+    }
+
+    .signature-block:first-child .signature-image {
+        justify-content: flex-start
+    }
+
+    @media print {
+        .paper {
+            aspect-ratio: auto
+        }
+
+        .signatures {
+            padding-bottom: 8mm;
+            gap: 15mm;
+            break-inside: avoid
+        }
+
+        .signature-image {
+            height: 12mm;
+            margin-bottom: 1mm
+        }
+
+        .signatures .signature-block span {
+            font-size: 21px
+        }
+
+        .signature-block {
+            width: 23%
+        }
+    }
+</style>
+<header>
+    <div><small>PADMA NURSING INSTITUTE</small>
+        <h1>Testimonial Studio</h1>
+    </div><button class="primary" onclick="window.print()">Print / Save PDF ↗</button>
+</header>
+<main>
+    <aside>
+        <h2>প্রশংসাপত্র তৈরি করুন</h2>
+        <p class="hint">তথ্য লিখুন, প্রিভিউ দেখুন এবং প্রিন্ট করুন।</p>
+        <form id="form">
+            <div class="section">01 / STUDENT DETAILS</div>
+            <div class="fields" id="student"></div>
+            <div class="section">02 / ACADEMIC RECORD</div>
+            <div class="fields" id="academic"></div>
+            <div class="section">03 / INSTITUTE & DOCUMENT</div>
+            <div class="fields" id="institute"></div><label class="wide" style="margin-top:14px">প্রতিষ্ঠানের লোগো
+                (ঐচ্ছিক)<input id="logo" type="file" accept="image/*"></label>
+            <div class="section">04 / SIGNATURES</div>
+            <p class="hint" style="margin-bottom:12px">প্রতিটি স্বাক্ষর আলাদাভাবে দিন। স্বচ্ছ PNG হলে ভালো দেখাবে।</p>
+            <div class="signature-control"><label for="upload-prepared">Prepared by — স্বাক্ষর</label><input
+                    id="upload-prepared" type="file" accept="image/*" data-signature="prepared"><button type="button"
+                    class="remove-signature" data-remove="prepared" disabled>স্বাক্ষর সরান</button></div>
+            <div class="signature-control"><label for="upload-compared">Compared by — স্বাক্ষর</label><input
+                    id="upload-compared" type="file" accept="image/*" data-signature="compared"><button type="button"
+                    class="remove-signature" data-remove="compared" disabled>স্বাক্ষর সরান</button></div>
+            <div class="signature-control"><label for="upload-principal">Principal — স্বাক্ষর</label><input
+                    id="upload-principal" type="file" accept="image/*" data-signature="principal"><button type="button"
+                    class="remove-signature" data-remove="principal" disabled>স্বাক্ষর সরান</button></div>
+            <p id="signature-feedback" role="status" style="font-size:12px;color:#45634b"></p>
+        </form>
+        <footer>প্রিন্ট সেটিং: A4 · Landscape · Scale 100%<br>রঙসহ প্রিন্টের জন্য Background graphics চালু রাখুন।
+        </footer>
+    </aside>
+    <section class="workspace">
+        <div class="toolbar">
+            <div><b>DOCUMENT PREVIEW</b> <span style="margin-left:10px">A4 · Landscape</span></div>
+            <div class="actions"><button id="clear">Clear fields</button><span class="status">● Live preview</span>
+            </div>
+        </div>
+        <div class="viewport">
+            <article class="paper"><svg class="ornament" viewBox="0 0 1400 850" preserveAspectRatio="none"
+                    aria-hidden="true">
+                    <defs>
+                        <pattern id="leaf" width="48" height="58" patternUnits="userSpaceOnUse">
+                            <g fill="none" stroke="#825036" stroke-width="2">
+                                <path d="M24 1C12 13 1 21 2 38L24 56 46 38C47 21 36 13 24 1Z" />
+                                <path
+                                    d="M24 8 9 35 24 48 39 35Z M24 16 17 34 24 40 31 34Z M24 18V41 M2 0 0 20 10 12 M46 0 48 20 38 12" />
+                            </g>
+                        </pattern>
+                        <pattern id="beads" width="8" height="8" patternUnits="userSpaceOnUse">
+                            <circle cx="4" cy="4" r="2.8" fill="none" stroke="#825036" stroke-width="1.2" />
+                        </pattern>
+                    </defs>
+                    <path d="M12 12H1388V838H12ZM57 57V793H1343V57Z" fill="url(#leaf)" fill-rule="evenodd" />
+                    <rect x="12" y="12" width="1376" height="826" fill="none" stroke="#825036" stroke-width="2" />
+                    <rect x="54" y="54" width="1292" height="742" fill="none" stroke="#825036" stroke-width="5" />
+                    <path d="M59 59H1341V791H59ZM69 69V781H1331V69Z" fill="url(#beads)" fill-rule="evenodd" />
+                    <rect x="70" y="70" width="1260" height="710" fill="none" stroke="#ad8a4c" stroke-width="3" />
+                </svg>
+                <div class="inner"><img class="watermark" id="watermark" hidden>
+                    <div class="school">
+                        <h3 data-v="school"></h3>
+                        <p data-v="address"></p>
+                        <div class="emblem" id="emblem">✚</div>
+                        <div class="ribbon">TESTIMONIAL</div>
+                    </div>
+                    <div class="meta"><span>SL No. <b data-v="serial"></b></span><span>Date of issue: <b
+                                data-v="date"></b></span></div>
+                    <div class="body">
+                        <div class="row"><span class="old">This is certify that</span><span class="fill"
+                                data-v="name"></span></div>
+                        <div class="row"><span class="old">Son/ Daughter of</span><span class="fill"><span
+                                    data-v="father"></span> &amp; <span data-v="mother"></span></span></div>
+                        <div class="row"><span class="old">Village/Mahalla</span><span class="fill"
+                                data-v="village"></span><span class="old">P.O</span><span class="fill"
+                                data-v="post"></span></div>
+                        <div class="row"><span class="old">P.S</span><span class="fill" data-v="police"></span><span
+                                class="old">District</span><span class="fill" data-v="district"></span></div>
+                        <p><span class="old">Bangladesh, was a student of <span data-v="school"></span> in <span
+                                    data-v="course"></span> Course during the session</span> <span class="inline"
+                                data-v="session"></span>.</p>
+                        <p><span class="old"><span data-v="pronoun"></span> passed the final professional examination of
+                                <span data-v="course"></span> course in</span> <span class="inline"
+                                data-v="exam"></span><span class="old">, held under the Bangladesh Nursing and Midwifery
+                                Council.</span></p>
+                        <div class="row"><span class="old"><span data-v="possessive"></span> bearing Registration No
+                                is</span><span class="fill" data-v="registration"></span><span class="old">and Roll No
+                                is</span><span class="fill" data-v="roll"></span></div>
+                        <p class="old"><span data-v="possessive"></span> conduct at this institute has been
+                            satisfactory. <span data-v="pronoun"></span> bears a good moral character.<br>I wish <span
+                                data-v="object"></span> every success in life.</p>
+                    </div>
+                    <div class="signatures">
+                        <div class="signature-block">
+                            <div class="signature-image" style="justify-content: center;"><img id="signature-prepared" alt="Prepared by signature"
+                                    hidden></div><span>Prepared by</span>
+                        </div>
+                        <div class="signature-block">
+                            <div class="signature-image"><img id="signature-compared" alt="Compared by signature"
+                                    hidden></div><span>Compared by</span>
+                        </div>
+                        <div class="signature-block">
+                            <div class="signature-image"><img id="signature-principal" alt="Principal signature" hidden>
+                            </div><span>Principal</span>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+        <p class="note">শুধু প্রশংসাপত্র ও আপলোড করা স্বাক্ষরগুলো প্রিন্ট হবে।</p>
+    </section>
+</main>
+<script>
+    const groups = {student: [['name', 'শিক্ষার্থীর নাম', ''], ['gender', 'সম্বোধন', 'She'], ['father', 'বাবার নাম', ''], ['mother', 'মায়ের নাম', ''], ['village', 'গ্রাম / মহল্লা', ''], ['post', 'ডাকঘর ও পোস্টকোড', ''], ['police', 'থানা', ''], ['district', 'জেলা', '']], academic: [['course', 'কোর্সের নাম', 'Diploma in Nursing Science and Midwifery'], ['session', 'সেশন', ''], ['exam', 'পাসের মাস ও বছর', ''], ['registration', 'রেজিস্ট্রেশন নম্বর', ''], ['roll', 'রোল নম্বর', '']], institute: [['school', 'প্রতিষ্ঠানের নাম', 'PADMA NURSING INSTITUTE'], ['address', 'ঠিকানা ও যোগাযোগ', '474, Talaimary Bazar, Kazla, Rajshahi : 025 88 86 71 50, 013 18 25 29 61-70'], ['serial', 'সিরিয়াল নম্বর', ''], ['date', 'ইস্যুর তারিখ', '2026-11-11']]};
+    for (const [id, fields] of Object.entries(groups)) for (const [key, label, value] of fields) {const l = document.createElement('label'); if (['name', 'course', 'school', 'address'].includes(key)) l.className = 'wide'; l.textContent = label; const i = document.createElement(key === 'gender' ? 'select' : 'input'); i.name = key; i.id = key; if (key === 'gender') i.innerHTML = '<option>She</option><option>He</option>'; else {i.type = key === 'date' ? 'date' : 'text'; i.value = value; i.placeholder = label;} l.append(i); document.getElementById(id).append(l);}
+    function render() {const d = Object.fromEntries(new FormData(document.getElementById('form'))); d.pronoun = d.gender; d.possessive = d.gender === 'She' ? 'Her' : 'His'; d.object = d.gender === 'She' ? 'her' : 'him'; if (d.date) {const [y, m, day] = d.date.split('-'); d.date = `${day}/${m}/${y}`;} document.querySelectorAll('[data-v]').forEach(e => e.textContent = d[e.dataset.v] || '................................');} document.getElementById('form').addEventListener('input', render); document.getElementById('clear').onclick = () => {if (confirm('শিক্ষার্থী ও একাডেমিক তথ্য মুছে ফেলবেন?')) {for (const section of ['student', 'academic']) document.querySelectorAll(`#${section} input`).forEach(i => {if (i.name !== 'course') i.value = '';}); render();} }; let logoUrl; document.getElementById('logo').onchange = e => {const f = e.target.files[0]; if (!f) return; if (!f.type.startsWith('image/')) return; if (logoUrl) URL.revokeObjectURL(logoUrl); logoUrl = URL.createObjectURL(f); const img = document.createElement('img'); img.src = logoUrl; img.alt = 'Institute logo'; document.getElementById('emblem').replaceChildren(img); const w = document.getElementById('watermark'); w.src = logoUrl; w.hidden = false;}; render();
+    const signatureUrls = {};
+    for (const input of document.querySelectorAll('[data-signature]')) input.addEventListener('change', () => {const key = input.dataset.signature, file = input.files[0]; if (!file) return; const feedback = document.getElementById('signature-feedback'); if (!file.type.startsWith('image/')) {feedback.textContent = 'ছবির ফাইল নির্বাচন করুন।'; input.value = ''; return;} if (file.size > 10 * 1024 * 1024) {feedback.textContent = '১০ MB-এর ছোট ছবি নির্বাচন করুন।'; input.value = ''; return;} const img = document.getElementById('signature-' + key); if (signatureUrls[key]) URL.revokeObjectURL(signatureUrls[key]); signatureUrls[key] = URL.createObjectURL(file); img.src = signatureUrls[key]; img.hidden = false; document.querySelector('[data-remove="' + key + '"]').disabled = false; feedback.textContent = 'স্বাক্ষর যুক্ত হয়েছে। প্রিভিউ ও প্রিন্টে দেখা যাবে।';});
+    for (const button of document.querySelectorAll('[data-remove]')) button.addEventListener('click', () => {const key = button.dataset.remove, img = document.getElementById('signature-' + key); img.hidden = true; img.removeAttribute('src'); document.getElementById('upload-' + key).value = ''; if (signatureUrls[key]) {URL.revokeObjectURL(signatureUrls[key]); delete signatureUrls[key];} button.disabled = true; document.getElementById('signature-feedback').textContent = 'স্বাক্ষর সরানো হয়েছে।';});
+</script>
+
+</html>
