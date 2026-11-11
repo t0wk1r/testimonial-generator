@@ -742,11 +742,24 @@
 
     @media print {
         .paper {
-            width: 297mm;
-            height: 210mm;
-            padding: 15mm 18mm;
-            background: #fffef2
-        }
+        width: 297mm;
+        height: 209mm;
+        box-sizing: border-box;
+
+        /* উপরে ২২, ডানে ১৮, নিচে ১৫, বামে ১৮ */
+        padding: 22mm 18mm 15mm 18mm !important;
+
+        background: #fffef2;
+    }
+
+    .inner {
+        height: 100%;
+        padding: 0 !important;
+    }
+
+    .school {
+        flex-shrink: 0;
+    }
 
         .school h3 {
             font-size: 34px
